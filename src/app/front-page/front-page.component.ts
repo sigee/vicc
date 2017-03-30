@@ -14,7 +14,7 @@ export class FrontPageComponent implements OnInit {
 
   ngOnInit() {
     this.DataserviceService.getJokes().subscribe(jokes => {
-      this.jokes = jokes.data;
+      this.jokes = JSON.parse(jokes.data);
       console.log(jokes);
     })
   }
