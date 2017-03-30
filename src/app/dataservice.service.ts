@@ -20,7 +20,7 @@ export class DataserviceService {
   ) { }
 
   getJokes() {
-    return this.http.get('https://viccek.herokuapp.com/api/viccek/0')
+    return this.http.get(url + '/api/viccek/0')
       .map(res => res.json());
   }
 
@@ -28,7 +28,7 @@ export class DataserviceService {
 
   
 
-    return this.http.get('https://viccek.herokuapp.com/api/viccek/' + category + '/' + page)
+    return this.http.get(url + '/api/viccek/' + category + '/' + page)
       .map(res => res.json());
   }
 
