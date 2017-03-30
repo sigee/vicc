@@ -1,3 +1,9 @@
-<p>
-  front-page works!
-</p>
+<div class="container">
+  <div class="row" *ngFor="let joke of jokes">
+    <div class="card card-block">
+      <h4 class="card-title">{{joke.cim}}</h4>
+      <p class="card-text">{{joke.tartalom}}</p>
+      <a href="#" class="card-link">Megosztás</a>
+    </div>
+  </div>
+</div>

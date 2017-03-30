@@ -8,6 +8,7 @@ import { FrontPageComponent } from './front-page/front-page.component';
 import { CategoryViewComponent } from './category-view/category-view.component';
 
 import { DataserviceService } from './dataservice.service';
+import { ViccRouterModule } from './router/router.module';
 
 @NgModule({
   declarations: [
@@ -18,7 +19,8 @@ import { DataserviceService } from './dataservice.service';
   imports: [
     BrowserModule,
     FormsModule,
-    HttpModule
+    HttpModule,
+    ViccRouterModule
   ],
   providers: [DataserviceService],
   bootstrap: [AppComponent]
