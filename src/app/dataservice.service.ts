@@ -5,7 +5,7 @@ import { Location } from '@angular/common';
 import 'rxjs/add/operator/map';
 import 'rxjs/add/operator/switchMap';
 
-const url = 'https://viccek.herokuapp.com/';
+const url = 'https://viccek.herokuapp.com';
 const local = 'http://localhost:3000';
 
 @Injectable()
