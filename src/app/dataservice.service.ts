@@ -21,7 +21,7 @@ export class DataserviceService {
 
   getJokes() {
     return this.http.get(url + '/api/viccek/0')
-      .map(res => res.json());
+      .map(res => console.log(res)/*res.json()*/);
   }
 
   getInCat(category, page) {
