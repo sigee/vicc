@@ -5,6 +5,9 @@ import { Location } from '@angular/common';
 import 'rxjs/add/operator/map';
 import 'rxjs/add/operator/switchMap';
 
+const url = 'https://viccek.herokuapp.com/';
+const local = 'http://localhost:3000';
+
 @Injectable()
 export class DataserviceService {
     category: string;
@@ -17,7 +20,7 @@ export class DataserviceService {
   ) { }
 
   getJokes() {
-    return this.http.get('http://localhost:3000/api/viccek/0')
+    return this.http.get(url + '/api/viccek/0')
       .map(res => res.json());
   }
 
@@ -25,7 +28,7 @@ export class DataserviceService {
 
   
 
-    return this.http.get('http://localhost:3000/api/viccek/' + category + '/' + page)
+    return this.http.get(url + '/api/viccek/' + category + '/' + page)
       .map(res => res.json());
   }
 
