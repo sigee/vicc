@@ -21,7 +21,7 @@ export class CategoryViewComponent implements OnInit {
       console.log(params.category);
 
         this.DataserviceService.getInCat(params.category, params.page).subscribe(jokes => {
-          this.jokes = jokes.json().data;
+          this.jokes = jokes.data;
           console.log(jokes);
 
         })
