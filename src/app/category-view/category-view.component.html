@@ -3,7 +3,8 @@
     <p-fieldset>
       <p-header>{{joke.cim}}</p-header>
       {{joke.tartalom}}<br>
-      <a [routerLink]="['/kiemelt/', joke._id]" class="card-link">Megosztás</a>
+      <a [routerLink]="['/kiemelt/', joke._id]" class="card-link">
+        <button pButton class="ui-button-secondary" type="button" iconPos="right" icon="fa fa-facebook-official" label="Megosztás"></button></a>
     </p-fieldset>
   </div>
 </div>
