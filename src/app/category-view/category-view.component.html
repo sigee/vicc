@@ -1,13 +1,13 @@
 <div class="container">
   <div class="row" *ngFor="let joke of jokes">
-    <div class="card card-block">
-      <h4 class="card-title">{{joke.cim}}</h4>
-      <p class="card-text">{{joke.tartalom}}</p>
-      <a href="#" class="card-link">Megosztás</a>
-    </div>
+    <p-fieldset>
+      <p-header>{{joke.cim}}</p-header>
+      {{joke.tartalom}}<br>
+      <a [routerLink]="['/kiemelt/', joke._id]" class="card-link">Megosztás</a>
+    </p-fieldset>
   </div>
 </div>
-<!--button class='kov' ng-click="next5()">Következő</button>
-<button class='elozo' ng-click="prev5()">Következő</button-->
-<i ng-click="next5()" class="fa fa-arrow-right nagy kov" aria-hidden="true"></i>
-<i ng-click="prev5()" class="fa fa-arrow-left nagy" aria-hidden="true"></i>
+<!--button pButton type="text" icon="fa fa-arrow-left" label="Lapozás"></button>
+
+<button pButton type="text" (click)="next()"  icon="fa fa-arrow-right" label="Lapozás"></button-->
+<p-paginator rows="4" totalRecords="120" pageLinkSize="7" (onPageChange)="paginate($event)"></p-paginator>

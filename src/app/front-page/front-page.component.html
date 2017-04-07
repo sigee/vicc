@@ -3,7 +3,7 @@
     <div class="card card-block">
       <h4 class="card-title">{{joke.cim}}</h4>
       <p class="card-text">{{joke.tartalom}}</p>
-      <a href="#" class="card-link">Megosztás</a>
+      <a [routerLink]="['/kiemelt/', joke._id]" class="card-link">Megosztás</a>
     </div>
   </div>
 </div>

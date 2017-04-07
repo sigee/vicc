@@ -1,0 +1,46 @@
+<div class='container'>
+  <h1>
+    Nyilt REST Api hamarosan!
+  </h1>
+  <hr>
+  <p>
+    A válazs a szervertől JSON formátumban fog érkezni. Példa a JSON objektum válaszra:
+  </p>
+  <pre>
+data: [
+
+  _id: "58b243357f88ad21c49f4baa",
+  cim: " Drog ",
+  tartalom: " Unoka kérdezi: - Nagyi, nem láttad a tablettáimat? Az volt ráírva, hogy ... ",
+  tag: "Bizarr",
+  __v: 0
+
+]
+</pre>
+  <hr>
+  <h3>
+    Jelenlegi REST Api url-ek:
+  </h3>
+  <ul>
+    <li>
+      <p>
+        Lapozás négyesével az adatbazisban:<br>viccek.herokuapp.com/api/viccek/[oldal szám]<br>Pl: viccek.herokuapp.com/api/viccek/0
+      </p>
+    </li>
+    <li>
+      <p>
+        Egy random vicc az egész adatbázisból:<br>viccek.herokuapp.com/api/random
+      </p>
+    </li>
+    <li>
+      <p>
+        Viccek kategóriák szerint:<br>viccek.herokuapp.com/api/viccek/[kategória]/[oldal szám]<br>Pl: viccek.herokuapp.com/api/viccek/Bizarr/0
+      </p>
+    </li>
+    <li>
+      <p>
+        Keresés ID szerint:<br>viccek.herokuapp.com/api/kereses/[ID]<br>Pl: viccek.herokuapp.com/api/kereses/58b243357f88ad21c49f4baa
+      </p>
+    </li>
+  </ul>
+</div>

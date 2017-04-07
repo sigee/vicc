@@ -28,6 +28,27 @@ router.get('/viccek/:page', function (req, res, next) {
     })
 });
 
+router.get('/random', function (req, res, next) {
+  let viccek = {};
+  Viccek.aggregate({
+      $sample: {
+        size: 1
+      }
+    })
+    .exec(function (err, data) {
+      if (err) {
+        let error = new Error('Database error');
+        error.status = 500;
+        next(error);
+      }
+      viccek.data = data;
+      res.header('Access-Control-Allow-Origin', 'https://viccek.herokuapp.com');
+      res.header('Access-Control-Allow-Origin', 'http://localhost:4200');
+      res.json(viccek);
+      res.status(200);
+    })
+});
+
 router.get('/viccek/:tag/:page', function (req, res, next) {
   let viccek = {};
   Viccek.find({
@@ -49,7 +70,7 @@ router.get('/viccek/:tag/:page', function (req, res, next) {
     });
 });
 
-router.get('/viccek/:id', function (req, res, next) {
+router.get('/kereses/:id', function (req, res, next) {
   let vicc = {};
   Viccek.find({
       _id: req.params.id
