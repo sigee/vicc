@@ -24,6 +24,11 @@ export class DataserviceService {
       .map(res => res.json());
   }
 
+   getJoke(id) {
+    return this.http.get(url + '/api/kereses/' + id)
+      .map(res => res.json());
+  }
+
   getInCat(category, page) {
     return this.http.get(url + '/api/viccek/' + category + '/' + page)
       .map(res => res.json());

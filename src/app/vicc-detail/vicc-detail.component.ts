@@ -1,4 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { DataserviceService } from '../dataservice.service';
+import { RouterModule, Routes, Router } from '@angular/router';
+import { ActivatedRoute } from '@angular/router';
 
 @Component({
   selector: 'app-vicc-detail',
@@ -6,10 +9,18 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./vicc-detail.component.css']
 })
 export class ViccDetailComponent implements OnInit {
+  location: Location;
+  joke: any[];
 
-  constructor() { }
+  constructor(private route: ActivatedRoute, private DataserviceService: DataserviceService) {}
 
   ngOnInit() {
+    this.route.params.subscribe(params => {
+      console.log(params.id);
+      this.DataserviceService.getJoke(params.id).subscribe(joke => {
+        this.joke = joke.data;
+      })
+    })
   }
 
 }

@@ -82,6 +82,8 @@ router.get('/kereses/:id', function (req, res, next) {
         next(error);
       }
       vicc.data = data;
+      res.header('Access-Control-Allow-Origin', 'https://viccek.herokuapp.com');
+      res.header('Access-Control-Allow-Origin', 'http://localhost:4200');
       res.json(vicc);
       res.status(200);
     });
