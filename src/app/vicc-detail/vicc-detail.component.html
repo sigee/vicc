@@ -1,3 +1,12 @@
-<p>
-  vicc-detail works!
-</p>
+<div class="container">
+  <div class="row" *ngFor="let jok of joke">
+    <p-fieldset>
+      <p-header>{{jok.cim}}</p-header>
+      {{jok.tartalom}}
+    </p-fieldset>
+  </div>
+  <a>
+    <i class="fa fa-facebook-official fa-5x" id="share" aria-hidden="true"></i>
+  </a>
+  (kattints a gombra)
+</div>

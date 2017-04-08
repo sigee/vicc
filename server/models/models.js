@@ -6,13 +6,19 @@ const Schema = mongoose.Schema;
 const ViccSchema = new Schema({
     cim: {
         type: String,
-        required: [true, 'Cim szukseges']
+        required: [true, 'Cim szukseges'],
+        trim: true
     },
     tartalom: {
         type: String,
-        required: [true, 'Tartalom szukseges']
+        required: [true, 'Tartalom szukseges'],
+        trim: true
     },
-    tag: String,
+    tag: {
+        type:String,
+        required: [true, 'Kategória szükséges!'],
+        trim: true
+    },
     rate: {
         type: [Number],
         min: [1, 'Minimalis ertekeles: 1 pont'],

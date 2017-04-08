@@ -2,6 +2,10 @@ const express = require('express');
 const router = express.Router();
 const Viccek = require('../models/models').Vicc;
 
+router.post('/registration', function(req, res, next) {
+  return res.send('User Registered!');
+});
+
 router.get('/', function (req, res, next) {
   res.status(200);
   res.json({
@@ -21,8 +25,8 @@ router.get('/viccek/:page', function (req, res, next) {
         next(error);
       }
       viccek.data = data;
-      res.header('Access-Control-Allow-Origin', 'https://viccek.herokuapp.com');
-      res.header('Access-Control-Allow-Origin', 'http://localhost:4200');
+      /*res.header('Access-Control-Allow-Origin', 'https://viccek.herokuapp.com');
+      res.header('Access-Control-Allow-Origin', 'http://localhost:4200');*/
       res.json(viccek);
       res.status(200);
     })
@@ -42,8 +46,8 @@ router.get('/random', function (req, res, next) {
         next(error);
       }
       viccek.data = data;
-      res.header('Access-Control-Allow-Origin', 'https://viccek.herokuapp.com');
-      res.header('Access-Control-Allow-Origin', 'http://localhost:4200');
+      /*res.header('Access-Control-Allow-Origin', 'https://viccek.herokuapp.com');
+      res.header('Access-Control-Allow-Origin', 'http://localhost:4200');*/
       res.json(viccek);
       res.status(200);
     })

@@ -9,16 +9,15 @@ import { ActivatedRoute } from '@angular/router';
   styleUrls: ['./vicc-detail.component.css']
 })
 export class ViccDetailComponent implements OnInit {
-  location: Location;
-  joke: any[];
+  joke: any;
 
   constructor(private route: ActivatedRoute, private DataserviceService: DataserviceService) {}
 
   ngOnInit() {
     this.route.params.subscribe(params => {
-      console.log(params.id);
       this.DataserviceService.getJoke(params.id).subscribe(joke => {
         this.joke = joke.data;
+        console.log(joke.data);
       })
     })
   }
