@@ -25,11 +25,12 @@ export class DataserviceService {
   }
 
   getInCat(category, page) {
-
-  
-
     return this.http.get(url + '/api/viccek/' + category + '/' + page)
       .map(res => res.json());
   }
 
+
+  voteUp() {
+    
+  }
 }

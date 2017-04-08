@@ -16,6 +16,8 @@ import { ViccDetailComponent } from './vicc-detail/vicc-detail.component';
 
 import { ButtonModule } from 'primeng/primeng';
 import { PaginatorModule } from 'primeng/primeng';
+import { RegistrationComponent } from './registration/registration.component';
+import { LoginComponent } from './login/login.component';
 
 @NgModule({
   declarations: [
@@ -23,7 +25,9 @@ import { PaginatorModule } from 'primeng/primeng';
     FrontPageComponent,
     CategoryViewComponent,
     RestApiComponent,
-    ViccDetailComponent
+    ViccDetailComponent,
+    RegistrationComponent,
+    LoginComponent
   ],
   imports: [
     BrowserModule,

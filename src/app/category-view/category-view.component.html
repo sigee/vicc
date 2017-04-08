@@ -4,7 +4,10 @@
       <p-header>{{joke.cim}}</p-header>
       {{joke.tartalom}}<br>
       <a [routerLink]="['/kiemelt/', joke._id]" class="card-link">
-        <button pButton class="ui-button-secondary" type="button" iconPos="right" icon="fa fa-facebook-official" label="Megosztás"></button></a>
+        <button pButton class="ui-button-secondary" type="button" iconPos="right" icon="fa fa-facebook-official" label="Megosztás"></button>
+      </a>
+      <button pButton type="button" (click)="voteUp()" icon="fa-thumbs-up"></button>
+      <button pButton type="button" (click)="voteDown()" icon="fa-thumbs-down"></button>
     </p-fieldset>
   </div>
 </div>

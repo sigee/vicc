@@ -17,6 +17,12 @@ const ViccSchema = new Schema({
         type: [Number],
         min: [1, 'Minimalis ertekeles: 1 pont'],
         max: [10, 'Maximalis ertekeles: 10 pont']
+    },
+    voteUp: {
+        type: Number
+    },
+    voteDown: {
+        type: Number
     }
 });
 

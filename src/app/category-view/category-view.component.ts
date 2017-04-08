@@ -20,60 +20,28 @@ export class CategoryViewComponent implements OnInit {
   constructor(private router: Router, private DataserviceService: DataserviceService, private route: ActivatedRoute, location: Location) { this.location = location; }
 
   ngOnInit() {
-    //this.jokes = jokes.data;
     this.route.params.subscribe(params => {
-      console.log(params.category);
-
       this.DataserviceService.getInCat(params.category, params.page).subscribe(jokes => {
         this.jokes = jokes.data;
-        console.log(jokes);
-
       })
-
     })
   }
 
-  /*next() {
-    this.route.params.subscribe(params => {
-      //this.nextPage = parseInt(params.page) + 1;
-      this.router.navigate(['category/' + params.category + '/' + parseInt(params.page) + 1]);
-    })
-  }*/
+  voteUp() {
+    alert('Fejlesztés folyamatban');
+  }
+
+  voteDown() {
+    alert('Fejlesztés folyamatban');
+  }
 
   paginate(event) {
-    console.log(event);
-
     this.route.params.subscribe(params => {
       this.goLoc = 'category/' + params.category + '/' + event.page;
-      //window.location.reload();
       this.router.navigate([this.goLoc]);
     })
-
-    //event.first = Index of the first record
-    //event.rows = Number of rows to display in new page
-    //event.page = Index of the new page
-    //event.pageCount = Total number of pages
   }
-
+  
 }
 
 
-/*
-
-dataService.getInCat($routeParams.tag, $routeParams.page, function (response) {
-  $scope.allJokesInCat = response.data.data;
-});
-
-$scope.next5 = function() {
-  let actualPath = $location.path();
-  let next = parseInt($routeParams.page) + 1;
-  $location.path('/category/' + $routeParams.tag + '/' + next);
-};
-
-$scope.prev5 = function() {
-  let actualPath = $location.path();
-  let next = parseInt($routeParams.page) - 1;
-  $location.path('/category/' + $routeParams.tag + '/' + next);
-};
-
-*/
