@@ -103,26 +103,27 @@
           Open REST Api
           </a>
         </li>
-        <li class='nav-item'>
+        <li *ngIf="!authService.loggedIn()" class='nav-item'>
           <a class="nav-link" [routerLink]="['/regisztracio']">
           Regisztráció
           </a>
         </li>
-        <li class='nav-item'>
-          <a class="nav-link" [routerLink]="['/bejelentkezes']">
+        <li *ngIf="!authService.loggedIn()" class='nav-item'>
+          <a class="nav-link" (click)=authService.login()>
           Bejelentkezés
           </a>
         </li>
-        <li class='nav-item'>
+        <li *ngIf="authService.loggedIn()" class='nav-item'>
           <a class="nav-link" [routerLink]="['/profil']">
           Profil
+          </a>
+        </li>
+        <li *ngIf="authService.loggedIn()" class='nav-item'>
+          <a class="nav-link"  (click)=authService.logout()>
+          Kijelentkezés
           </a>
         </li>
       </ul>
     </div>
 </nav>
-<div class="message">
-  <h1> hello, I'm a hidden message. You found it.</h1>
-  <h2>Now Click the Heart button in the bottom to support CSS3</h2>
-</div>
 <router-outlet></router-outlet>
