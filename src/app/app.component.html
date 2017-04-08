@@ -104,11 +104,6 @@
           </a>
         </li>
         <li *ngIf="!authService.loggedIn()" class='nav-item'>
-          <a class="nav-link" [routerLink]="['/regisztracio']">
-          Regisztráció
-          </a>
-        </li>
-        <li *ngIf="!authService.loggedIn()" class='nav-item'>
           <a class="nav-link" (click)=authService.login()>
           Bejelentkezés
           </a>
