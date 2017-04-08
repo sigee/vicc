@@ -13,6 +13,7 @@ export class AuthService {
 
   constructor(private router: Router) {
     this.userProfile = JSON.parse(localStorage.getItem('profile'));
+    console.log(this.userProfile);
     // We'll listen for an authentication event to be raised and if successful will log the user in.
     this.lock.on('authenticated', (authResult: any) => {
       localStorage.setItem('id_token', authResult.idToken);
