@@ -21,3 +21,7 @@ body {
 footer {
   text-align: right;
 }
+
+.intermission {
+  height: 100vh;
+}
