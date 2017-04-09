@@ -59,11 +59,11 @@ export function metaFactory(): MetaLoader {
     PaginatorModule,
     BrowserAnimationsModule,
     FieldsetModule,
-    ShareButtonsModule.forRoot(),
     MetaModule.forRoot({
       provide: MetaLoader,
       useFactory: (metaFactory)
-    })
+    }),
+    ShareButtonsModule.forRoot()
   ],
   providers: [DataserviceService, AuthGuardService, AuthService],
   bootstrap: [AppComponent]
