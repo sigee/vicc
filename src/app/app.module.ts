@@ -21,8 +21,7 @@ import { PaginatorModule } from 'primeng/primeng';
 import { RegistrationComponent } from './registration/registration.component';
 import { LoginComponent } from './login/login.component';
 import { ProfileComponent } from './profile/profile.component';
-import {ShareButtonsModule} from "ng2-sharebuttons";
-import { MetaModule } from 'ng2-meta';
+import { ShareButtonsModule } from "ng2-sharebuttons";
 
 @NgModule({
   declarations: [
@@ -44,8 +43,7 @@ import { MetaModule } from 'ng2-meta';
     PaginatorModule,
     BrowserAnimationsModule,
     FieldsetModule,
-    ShareButtonsModule.forRoot(),
-    MetaModule
+    ShareButtonsModule.forRoot()
   ],
   providers: [DataserviceService, AuthGuardService, AuthService],
   bootstrap: [AppComponent]
