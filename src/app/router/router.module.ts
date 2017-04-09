@@ -14,7 +14,14 @@ const routes: Routes = [
     { path: '', component: FrontPageComponent },
     { path: 'category/:category/:page', component: CategoryViewComponent },
     { path: 'rest-api-info', component: RestApiComponent },
-    { path: 'kiemelt/:id', component: ViccDetailComponent },
+    { path: 'kiemelt/:id', component: ViccDetailComponent,
+    data: {
+      meta: {
+        title: 'ViccApp',
+        description: 'Description of the ViccApp',
+        'og:image': '../assets/banana.png'
+      }
+    } },
     { path: 'regisztracio', component: RegistrationComponent },
     { path: 'bejelentkezes', component: LoginComponent },
     { path: 'profil', component: ProfileComponent, canActivate: [AuthGuardService] }
