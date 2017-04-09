@@ -8,10 +8,14 @@ import { AuthService } from '../auth.service';
   styleUrls: ['./profile.component.css']
 })
 export class ProfileComponent implements OnInit {
-
+  userProfile: Object;
   constructor(public authService: AuthService) { }
 
   ngOnInit() {
+  }
+
+  getProfile() {
+    this.userProfile = JSON.parse(localStorage.getItem('profile'));
   }
 
 }

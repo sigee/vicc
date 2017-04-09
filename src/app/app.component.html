@@ -109,7 +109,7 @@
           </a>
         </li>
         <li *ngIf="authService.loggedIn()" class='nav-item'>
-          <a class="nav-link" [routerLink]="['/profil']">
+          <a class="nav-link" (click)="getProfile()" [routerLink]="['/profil']">
           Profil
           </a>
         </li>
