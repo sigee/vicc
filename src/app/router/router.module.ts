@@ -9,22 +9,42 @@ import { ViccDetailComponent } from '../vicc-detail/vicc-detail.component';
 import { RegistrationComponent } from '../registration/registration.component';
 import { LoginComponent } from '../login/login.component';
 import { ProfileComponent } from '../profile/profile.component';
+import { MetaGuard } from '@nglibs/meta';
 
 const routes: Routes = [
-    { path: '', component: FrontPageComponent },
-    { path: 'category/:category/:page', component: CategoryViewComponent },
-    { path: 'rest-api-info', component: RestApiComponent },
-    { path: 'kiemelt/:id', component: ViccDetailComponent,
+  { path: '', canActivate: [MetaGuard], component: FrontPageComponent,
     data: {
       meta: {
-        title: 'ViccApp',
-        description: 'Description of the ViccApp',
-        'og:image': '../assets/banana.png'
+        title: 'Vicc, humor, bojler',
+        description: 'A legjobb napi vicc, humor kiszolgáló'
       }
     } },
-    { path: 'regisztracio', component: RegistrationComponent },
-    { path: 'bejelentkezes', component: LoginComponent },
-    { path: 'profil', component: ProfileComponent, canActivate: [AuthGuardService] }
+  { path: 'category/:category/:page', component: CategoryViewComponent },
+  {
+    path: 'rest-api-info', canActivate: [MetaGuard], component: RestApiComponent,
+    data: {
+      meta: {
+        title: 'REST Api informácó',
+        description: 'Nyílt REST Api információ - JSON válasszal'
+      }
+    }
+  },
+  { path: 'kiemelt/:id', component: ViccDetailComponent },
+  { path: 'regisztracio', component: RegistrationComponent,
+    data: {
+      meta: {
+        title: 'Regisztráció',
+        description: 'Regisztráció a ViccApp-ba'
+      }
+    } },
+  { path: 'bejelentkezes', component: LoginComponent,
+    data: {
+      meta: {
+        title: 'Bejelentkezés',
+        description: 'bejelentkezes a ViccApp-ba'
+      }
+    } },
+  { path: 'profil', component: ProfileComponent, canActivate: [AuthGuardService] }
 ];
 
 @NgModule({

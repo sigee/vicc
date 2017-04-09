@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { DataserviceService } from '../dataservice.service';
 import { RouterModule, Routes, Router } from '@angular/router';
 import { ActivatedRoute } from '@angular/router';
+import { MetaService } from '@nglibs/meta';
 
 @Component({
   selector: 'app-vicc-detail',
@@ -12,14 +13,18 @@ export class ViccDetailComponent implements OnInit {
   joke: any;
   title: string;
 
-  constructor(private route: ActivatedRoute, private DataserviceService: DataserviceService) { }
+  constructor(private route: ActivatedRoute, private DataserviceService: DataserviceService, private readonly meta: MetaService) { }
 
   ngOnInit() {
     this.route.params.subscribe(params => {
       this.DataserviceService.getJoke(params.id).subscribe(joke => {
         this.joke = joke.data;
-        console.log(this.joke[0].tag);
-        console.log(typeof this.joke);
+        console.log(this.joke[0].cim);
+        this.meta.setTitle(this.joke[0].cim);
+        this.meta.setTag('og:locale', 'hu-HU');
+        this.meta.setTag('og:type', 'article');
+        this.meta.setTag('description', this.joke[0].tartalom);
+        this.meta.setTag('og:description', this.joke[0].tartalom);
       })
     })
 

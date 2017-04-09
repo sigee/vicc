@@ -22,6 +22,22 @@ import { RegistrationComponent } from './registration/registration.component';
 import { LoginComponent } from './login/login.component';
 import { ProfileComponent } from './profile/profile.component';
 import { ShareButtonsModule } from "ng2-sharebuttons";
+import { MetaModule, MetaLoader, MetaStaticLoader, PageTitlePositioning } from '@nglibs/meta';
+
+export function metaFactory(): MetaLoader {
+  return new MetaStaticLoader({
+    pageTitlePositioning: PageTitlePositioning.PrependPageTitle,
+    pageTitleSeparator: ' - ',
+    applicationName: 'ViccApp',
+    defaults: {
+      title: 'Viccek',
+      description: 'A legjobb napi vicc, humor kiszolgáló',
+      'og:image': 'https://viccek.herokuapp.com/assets/banana.png',
+      'og:type': 'website',
+      'og:locale': 'hu-HU'
+    }
+  });
+}
 
 @NgModule({
   declarations: [
@@ -43,7 +59,11 @@ import { ShareButtonsModule } from "ng2-sharebuttons";
     PaginatorModule,
     BrowserAnimationsModule,
     FieldsetModule,
-    ShareButtonsModule.forRoot()
+    ShareButtonsModule.forRoot(),
+    MetaModule.forRoot({
+      provide: MetaLoader,
+      useFactory: (metaFactory)
+    })
   ],
   providers: [DataserviceService, AuthGuardService, AuthService],
   bootstrap: [AppComponent]
