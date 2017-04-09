@@ -110,11 +110,11 @@
         </li>
         <li *ngIf="authService.loggedIn()" class='nav-item'>
           <a class="nav-link" (click)="getProfile()" [routerLink]="['/profil']">
-          Profil
+          {{authService.userProfile.screen_name}}
           </a>
         </li>
         <li *ngIf="authService.loggedIn()" class='nav-item'>
-          <a class="nav-link"  (click)=authService.logout()>
+          <a class="nav-link" (click)=authService.logout()>
           Kijelentkezés
           </a>
         </li>
