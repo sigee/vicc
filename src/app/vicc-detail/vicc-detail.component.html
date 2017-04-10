@@ -4,8 +4,8 @@
       <p-header>{{joke.cim}}</p-header>
       {{joke.tartalom}}
     </p-fieldset>
-  </div>
   <a>
-    <share-buttons></share-buttons>
+    <share-buttons [title]=joke.cim [description]=joke.tartalom ></share-buttons>
   </a>
+  </div>
 </div>
