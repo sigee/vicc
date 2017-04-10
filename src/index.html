@@ -33,16 +33,29 @@
   </script>
 </head>
 
+  <button id="goFS">Go fullscreen</button>
 <body mat-app-background>
   <app-root>
     <img class="img-fluid intermission" src="assets/maxresdefault.jpg" alt="">
   </app-root>
-  <button id="goFS">Go fullscreen</button>
 <script>
   var goFS = document.getElementById("goFS");
-  goFS.addEventListener("click", function() {
-      document.body.requestFullscreen();
-  }, false);
+  goFS.addEventListener("click", toggleFullScreen, false);
+
+  function toggleFullScreen() {
+  var doc = window.document;
+  var docEl = doc.documentElement;
+
+  var requestFullScreen = docEl.requestFullscreen || docEl.mozRequestFullScreen || docEl.webkitRequestFullScreen || docEl.msRequestFullscreen;
+  var cancelFullScreen = doc.exitFullscreen || doc.mozCancelFullScreen || doc.webkitExitFullscreen || doc.msExitFullscreen;
+
+  if(!doc.fullscreenElement && !doc.mozFullScreenElement && !doc.webkitFullscreenElement && !doc.msFullscreenElement) {
+    requestFullScreen.call(docEl);
+  }
+  else {
+    cancelFullScreen.call(doc);
+  }
+}
 </script>
 </body>
 
