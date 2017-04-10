@@ -1,6 +1,7 @@
 
 .bg-faded {
-    background-color: #ece8da;
+    background-color: rgba(180,240,60,0.4);
+    font-weight: 800;
 }
 
 .profile-img {
@@ -12,3 +13,13 @@
 .headline {
   text-align: center;
 }
+
+body {
+  
+  background: url(../assets/bg.jpg) no-repeat center center fixed; 
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+}
+

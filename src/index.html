@@ -4,7 +4,7 @@
 <head>
   <meta charset="utf-8">
   <title>Vicc és Humor kiszolgáló, a legminsőségibb.</title>
-  <meta name="description" content="A legjobb napi vicc és humor kiszolgáló">
+  <meta name="description" content="A legjobb vicc és humor kiszolgáló. Napivicc, faviccek, viccesviccek">
   <meta name="og:description" content="A legjobb vicc és humor kiszolgáló. Napivicc, faviccek, viccesviccek">
   <meta name="og:type" content="website">
   <meta name="og:locale" content="hu-HU">
@@ -30,32 +30,14 @@
 
     ga('create', 'UA-92985205-1', 'auto');
     ga('send', 'pageview');
+
   </script>
 </head>
+
 <body mat-app-background>
   <app-root>
     <img class="img-fluid intermission" src="assets/maxresdefault.jpg" alt="">
   </app-root>
-<script>
-  /*var goFS = document.getElementById("goFS");*/
-  document.getElementById("banana").addEventListener("click", toggleFullScreen, false);
-
-  function toggleFullScreen() {
-  var doc = window.document;
-  var docEl = doc.documentElement;
-
-  var requestFullScreen = docEl.requestFullscreen || docEl.mozRequestFullScreen || docEl.webkitRequestFullScreen || docEl.msRequestFullscreen;
-  var cancelFullScreen = doc.exitFullscreen || doc.mozCancelFullScreen || doc.webkitExitFullscreen || doc.msExitFullscreen;
-
-  if(!doc.fullscreenElement && !doc.mozFullScreenElement && !doc.webkitFullscreenElement && !doc.msFullscreenElement) {
-    requestFullScreen.call(docEl);
-  }
-  else {
-    cancelFullScreen.call(doc);
-  }
-  toggleFullScreen();
-}
-</script>
 </body>
 
 </html>

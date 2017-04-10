@@ -14,6 +14,11 @@
 
 body {
   padding: 0;
+  background: url(assets/bg.jpg) no-repeat center center fixed; 
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
 
 }
 
@@ -32,3 +37,4 @@ footer {
     bottom: 0;
     width: 100vw;
 }
+

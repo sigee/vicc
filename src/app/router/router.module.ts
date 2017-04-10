@@ -16,8 +16,8 @@ const routes: Routes = [
     path: '', canActivate: [MetaGuard], component: FrontPageComponent,
     data: {
       meta: {
-        title: 'Vicc, humor, bojler',
-        description: 'A legjobb napi vicc, humor kiszolgáló'
+        title: 'Vicc és Humor kiszolgáló, a legminsőségibb.',
+        description: 'A legjobb vicc és humor kiszolgáló. Napivicc, faviccek, viccesviccek'
       }
     }
   },

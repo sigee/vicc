@@ -1,3 +1,11 @@
 .likeButtons {
     float: right;
 }
+
+.container {
+    border: none;
+}
+
+/*
+    background-color: rgb(255,185,5);*/
+
