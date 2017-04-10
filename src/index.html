@@ -37,9 +37,13 @@
   <app-root>
     <img class="img-fluid intermission" src="assets/maxresdefault.jpg" alt="">
   </app-root>
-  <script>
-    document.body.requestFullscreen();
-  </script>
+  <button id="goFS">Go fullscreen</button>
+<script>
+  var goFS = document.getElementById("goFS");
+  goFS.addEventListener("click", function() {
+      document.body.requestFullscreen();
+  }, false);
+</script>
 </body>
 
 </html>
