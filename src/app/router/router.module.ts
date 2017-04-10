@@ -12,13 +12,15 @@ import { ProfileComponent } from '../profile/profile.component';
 import { MetaGuard } from '@nglibs/meta';
 
 const routes: Routes = [
-  { path: '', canActivate: [MetaGuard], component: FrontPageComponent,
+  {
+    path: '', canActivate: [MetaGuard], component: FrontPageComponent,
     data: {
       meta: {
         title: 'Vicc, humor, bojler',
         description: 'A legjobb napi vicc, humor kiszolgáló'
       }
-    } },
+    }
+  },
   { path: 'category/:category/:page', component: CategoryViewComponent },
   {
     path: 'rest-api-info', canActivate: [MetaGuard], component: RestApiComponent,
@@ -29,21 +31,32 @@ const routes: Routes = [
       }
     }
   },
-  { path: 'kiemelt/:id', component: ViccDetailComponent },
-  { path: 'regisztracio', component: RegistrationComponent,
+  {
+    path: 'kiemelt/:id', canActivate: [MetaGuard], component: ViccDetailComponent,
+    data: {
+      meta: {
+        title: 'Vicc kiemelve'
+      }
+    }
+  },
+  {
+    path: 'regisztracio', component: RegistrationComponent,
     data: {
       meta: {
         title: 'Regisztráció',
         description: 'Regisztráció a ViccApp-ba'
       }
-    } },
-  { path: 'bejelentkezes', component: LoginComponent,
+    }
+  },
+  {
+    path: 'bejelentkezes', component: LoginComponent,
     data: {
       meta: {
         title: 'Bejelentkezés',
         description: 'bejelentkezes a ViccApp-ba'
       }
-    } },
+    }
+  },
   { path: 'profil', component: ProfileComponent, canActivate: [AuthGuardService] }
 ];
 
