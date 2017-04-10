@@ -25,3 +25,14 @@ footer {
 .intermission {
   height: 100vh;
 }
+
+html {
+  height: 100vh;
+}
+
+footer {
+    clear: both;
+    position: absolute;
+    bottom: 0;
+    width: 100vw;
+}
