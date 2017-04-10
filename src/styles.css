@@ -17,13 +17,9 @@ body {
 
 }
 
-
-footer {
-  text-align: right;
-}
-
 .intermission {
   height: 100vh;
+  width: auto;
 }
 
 html {
