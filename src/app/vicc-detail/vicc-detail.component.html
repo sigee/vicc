@@ -5,7 +5,7 @@
       {{joke.tartalom}}
     </p-fieldset>
   <a>
-    <share-buttons [title]=joke.cim [description]=joke.tartalom ></share-buttons>
+    <share-buttons [tags]=joke.tag [title]="title" [description]=joke.tartalom ></share-buttons>
   </a>
   </div>
 </div>
