@@ -6,8 +6,10 @@ const http = require('http');
 const bodyParser = require('body-parser');
 var cors = require('cors');
 const api = require('./server/routes/api');
+var enforce = require('express-sslify');
 
 const app = express();
+app.use(enforce.HTTPS());
 app.use(cors())
 
 require('./server/dbcon');
