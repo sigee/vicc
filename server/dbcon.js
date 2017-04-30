@@ -2,8 +2,10 @@
 
 const mongoose = require('mongoose');
 
+
+
 //Setting up db connection
-mongoose.connect('mongodb://process.env.dbuser:process.env.dbpass@ds157829.mlab.com:57829/heroku_f56z212v');
+mongoose.connect('mongodb://' + process.env.dbuser + ':' + process.env.dbpass + '@ds157829.mlab.com:57829/heroku_f56z212v');
 
 
 
