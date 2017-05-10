@@ -29,8 +29,8 @@ export class ViccDetailComponent implements OnInit {
         this.meta.setTag('twitter:title', this.joke[0].cim);
         this.meta.setTag('twitter:description', this.joke[0].tartalom);
         this.meta.setTag('twitter:image', 'https://viccek.herokuapp.com/assets/banana.png');
-      })
-    })
+      });
+    });
 
 
 

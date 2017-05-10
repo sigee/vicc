@@ -21,7 +21,7 @@ import { PaginatorModule } from 'primeng/primeng';
 import { RegistrationComponent } from './registration/registration.component';
 import { LoginComponent } from './login/login.component';
 import { ProfileComponent } from './profile/profile.component';
-import { ShareButtonsModule } from "ng2-sharebuttons";
+import { ShareButtonsModule } from 'ng2-sharebuttons';
 import { MetaModule, MetaLoader, MetaStaticLoader, PageTitlePositioning } from '@nglibs/meta';
 
 export function metaFactory(): MetaLoader {

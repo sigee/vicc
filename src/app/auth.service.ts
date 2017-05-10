@@ -8,7 +8,7 @@ declare var Auth0Lock: any;
 export class AuthService {
   // We'll use the Auth0 Lock widget for capturing user credentials
   lock = new Auth0Lock('Fi8d0QJl68I1Y1DKN9Jsl9fB2hGnxmb0', 'terravibe.eu.auth0.com');
-  //Store profile object in auth class
+  // Store profile object in auth class
   userProfile: Object;
 
   constructor(private router: Router) {
@@ -46,7 +46,8 @@ export class AuthService {
     this.router.navigateByUrl('/');
   }
 
-  // Finally, this method will check to see if the user is logged in. We'll be able to tell by checking to see if they have a token and whether that token is valid or not.
+  // Finally, this method will check to see if the user is logged in. We'll be able to tell by checking to see if they
+  // have a token and whether that token is valid or not.
   loggedIn() {
     return tokenNotExpired();
   }

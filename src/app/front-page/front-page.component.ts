@@ -16,7 +16,7 @@ export class FrontPageComponent implements OnInit {
     this.DataserviceService.getJokes().subscribe(jokes => {
       this.jokes = jokes.data;
       console.log(jokes);
-    })
+    });
   }
 
 }
