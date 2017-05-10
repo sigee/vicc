@@ -8,7 +8,7 @@ import { AppComponent } from './app.component';
 import { FrontPageComponent } from './front-page/front-page.component';
 import { CategoryViewComponent } from './category-view/category-view.component';
 
-import { DataserviceService } from './dataservice.service';
+import { DataServiceService } from './dataservice.service';
 import { ViccRouterModule } from './router/router.module';
 import { RestApiComponent } from './rest-api/rest-api.component';
 import { ViccDetailComponent } from './vicc-detail/vicc-detail.component';
@@ -65,7 +65,7 @@ export function metaFactory(): MetaLoader {
     }),
     ShareButtonsModule.forRoot()
   ],
-  providers: [DataserviceService, AuthGuardService, AuthService],
+  providers: [DataServiceService, AuthGuardService, AuthService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

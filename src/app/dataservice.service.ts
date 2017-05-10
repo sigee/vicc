@@ -9,7 +9,7 @@ const url = 'https://viccek.herokuapp.com';
 const local = 'http://localhost:3000';
 
 @Injectable()
-export class DataserviceService {
+export class DataServiceService {
     category: string;
     page: number;
 

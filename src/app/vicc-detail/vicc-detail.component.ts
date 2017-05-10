@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { DataserviceService } from '../dataservice.service';
+import { DataServiceService } from '../dataservice.service';
 import { ActivatedRoute } from '@angular/router';
 import { MetaService } from '@nglibs/meta';
 
@@ -12,11 +12,11 @@ export class ViccDetailComponent implements OnInit {
   joke: any;
   title: string;
 
-  constructor(private route: ActivatedRoute, private DataserviceService: DataserviceService, private readonly meta: MetaService) { }
+  constructor(private route: ActivatedRoute, private dataServiceService: DataServiceService, private readonly meta: MetaService) { }
 
   ngOnInit() {
     this.route.params.subscribe(params => {
-      this.DataserviceService.getJoke(params.id).subscribe(joke => {
+      this.dataServiceService.getJoke(params.id).subscribe(joke => {
         this.joke = joke.data;
         console.log(this.joke[0].cim);
         this.meta.setTitle(this.joke[0].cim);
