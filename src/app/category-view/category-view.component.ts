@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { DataserviceService } from '../dataservice.service';
-import { Location, LocationStrategy, PathLocationStrategy, CommonModule } from '@angular/common';
-import { RouterModule, Routes, Router } from '@angular/router';
+import { Location, LocationStrategy, PathLocationStrategy } from '@angular/common';
+import { Router } from '@angular/router';
 import { ActivatedRoute } from '@angular/router';
 
 
@@ -41,7 +41,7 @@ export class CategoryViewComponent implements OnInit {
       this.router.navigate([this.goLoc]);
     })
   }
-  
+
 }
 
 

@@ -1,6 +1,5 @@
 import { Component, OnInit } from '@angular/core';
 import { DataserviceService } from '../dataservice.service';
-import { RouterModule, Routes, Router } from '@angular/router';
 import { ActivatedRoute } from '@angular/router';
 import { MetaService } from '@nglibs/meta';
 

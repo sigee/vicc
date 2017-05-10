@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { Http } from '@angular/http';
-import { ActivatedRoute, Params } from '@angular/router';
+import { ActivatedRoute } from '@angular/router';
 import { Location } from '@angular/common';
 import 'rxjs/add/operator/map';
 import 'rxjs/add/operator/switchMap';
@@ -36,6 +36,6 @@ export class DataserviceService {
 
 
   voteUp() {
-    
+
   }
 }
