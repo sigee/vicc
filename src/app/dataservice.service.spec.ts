@@ -1,15 +1,15 @@
 import { TestBed, inject } from '@angular/core/testing';
 
-import { DataserviceService } from './dataservice.service';
+import { DataServiceService } from './dataservice.service';
 
-describe('DataserviceService', () => {
+describe('DataServiceService', () => {
   beforeEach(() => {
     TestBed.configureTestingModule({
-      providers: [DataserviceService]
+      providers: [DataServiceService]
     });
   });
 
-  it('should ...', inject([DataserviceService], (service: DataserviceService) => {
+  it('should ...', inject([DataServiceService], (service: DataServiceService) => {
     expect(service).toBeTruthy();
   }));
 });

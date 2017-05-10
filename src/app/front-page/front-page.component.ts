@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { DataserviceService } from '../dataservice.service';
+import { DataServiceService } from '../dataservice.service';
 
 @Component({
   selector: 'app-front-page',
@@ -10,13 +10,13 @@ export class FrontPageComponent implements OnInit {
 
   jokes: any[];
 
-  constructor(private DataserviceService: DataserviceService) { }
+  constructor(private dataServiceService: DataServiceService) { }
 
   ngOnInit() {
-    this.DataserviceService.getJokes().subscribe(jokes => {
+    this.dataServiceService.getJokes().subscribe(jokes => {
       this.jokes = jokes.data;
       console.log(jokes);
-    })
+    });
   }
 
 }

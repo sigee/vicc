@@ -1,6 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { DataserviceService } from '../dataservice.service';
-import { RouterModule, Routes, Router } from '@angular/router';
+import { DataServiceService } from '../dataservice.service';
 import { ActivatedRoute } from '@angular/router';
 import { MetaService } from '@nglibs/meta';
 
@@ -13,11 +12,11 @@ export class ViccDetailComponent implements OnInit {
   joke: any;
   title: string;
 
-  constructor(private route: ActivatedRoute, private DataserviceService: DataserviceService, private readonly meta: MetaService) { }
+  constructor(private route: ActivatedRoute, private dataServiceService: DataServiceService, private readonly meta: MetaService) { }
 
   ngOnInit() {
     this.route.params.subscribe(params => {
-      this.DataserviceService.getJoke(params.id).subscribe(joke => {
+      this.dataServiceService.getJoke(params.id).subscribe(joke => {
         this.joke = joke.data;
         console.log(this.joke[0].cim);
         this.meta.setTitle(this.joke[0].cim);
@@ -30,8 +29,8 @@ export class ViccDetailComponent implements OnInit {
         this.meta.setTag('twitter:title', this.joke[0].cim);
         this.meta.setTag('twitter:description', this.joke[0].tartalom);
         this.meta.setTag('twitter:image', 'https://viccek.herokuapp.com/assets/banana.png');
-      })
-    })
+      });
+    });
 
 
 

@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import { DataserviceService } from '../dataservice.service';
-import { Location, LocationStrategy, PathLocationStrategy, CommonModule } from '@angular/common';
-import { RouterModule, Routes, Router } from '@angular/router';
+import { DataServiceService } from '../dataservice.service';
+import { Location, LocationStrategy, PathLocationStrategy } from '@angular/common';
+import { Router } from '@angular/router';
 import { ActivatedRoute } from '@angular/router';
 
 
@@ -17,14 +17,16 @@ export class CategoryViewComponent implements OnInit {
   goLoc: string;
   nextPage: Number;
 
-  constructor(private router: Router, private DataserviceService: DataserviceService, private route: ActivatedRoute, location: Location) { this.location = location; }
+  constructor(private router: Router, private dataServiceService: DataServiceService, private route: ActivatedRoute, location: Location) {
+    this.location = location;
+  }
 
   ngOnInit() {
     this.route.params.subscribe(params => {
-      this.DataserviceService.getInCat(params.category, params.page).subscribe(jokes => {
+      this.dataServiceService.getInCat(params.category, params.page).subscribe(jokes => {
         this.jokes = jokes.data;
-      })
-    })
+      });
+    });
   }
 
   voteUp() {
@@ -39,9 +41,9 @@ export class CategoryViewComponent implements OnInit {
     this.route.params.subscribe(params => {
       this.goLoc = 'category/' + params.category + '/' + event.page;
       this.router.navigate([this.goLoc]);
-    })
+    });
   }
-  
+
 }
 
 
