@@ -180,4 +180,23 @@ router.delete('/viccek/:id', authCheck, function (req, res, next) {
     });
 });
 
+//Vicc categories
+router.get('/categories', function (req, res, next) {
+  let categories = {};
+  Viccek.aggregate([
+    {$group: {_id: "$tag"}},
+    {$sort: {_id: 1}}
+  ])
+    .exec(function (err, data) {
+      if (err) {
+        let error = new Error('Database error');
+        error.status = 500;
+        next(error);
+      }
+      categories.data = data;
+      res.json(categories);
+      res.status(200);
+    });
+});
+
 module.exports = router;

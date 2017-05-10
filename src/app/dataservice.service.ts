@@ -36,6 +36,10 @@ export class DataServiceService {
 
 
   voteUp() {
+  }
 
+  getCategories() {
+    return this.http.get(url + '/api/categories')
+      .map(res => res.json());
   }
 }
