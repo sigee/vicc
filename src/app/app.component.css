@@ -10,13 +10,9 @@
   box-shadow: 0px 0px 8px;
 }
 
-.headline {
-  text-align: center;
-}
-
 body {
-  
-  background: url(../assets/bg.jpg) no-repeat center center fixed; 
+
+  background: url(../assets/bg.jpg) no-repeat center center fixed;
   -webkit-background-size: cover;
   -moz-background-size: cover;
   -o-background-size: cover;
