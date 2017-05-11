@@ -15,16 +15,7 @@ export class FrontPageComponent implements OnInit {
   ngOnInit() {
     this.dataServiceService.getJokes().subscribe(jokes => {
       this.jokes = jokes.data;
-      console.log(jokes);
     });
   }
 
 }
-
-/*
-
-dataService.getAll($routeParams.page, function (response) {
-  $scope.allJokes = response.data.data;
-});
-
-*/

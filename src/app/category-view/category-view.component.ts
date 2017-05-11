@@ -17,6 +17,8 @@ export class CategoryViewComponent implements OnInit {
   goLoc: string;
   nextPage: Number;
   categories: any[];
+  category: string;
+  paginateCount: number;
 
   constructor(private router: Router, private dataServiceService: DataServiceService, private route: ActivatedRoute, location: Location) {
     this.location = location;
@@ -29,8 +31,16 @@ export class CategoryViewComponent implements OnInit {
       });
     });
 
-    this.dataServiceService.getCategories().subscribe(categories => {
-      this.categories = categories.data;
+    this.route.params.subscribe(params => {
+      this.category = params.category;
+      this.dataServiceService.getCategories().subscribe(categories => {
+        this.categories = categories.data;
+        let result = categories.data.filter(function (obj) {
+          return obj._id == params.category;
+        });
+        this.paginateCount = result[0].count;
+        console.log(this.paginateCount);
+      });
     });
   }
 
