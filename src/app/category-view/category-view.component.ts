@@ -16,6 +16,7 @@ export class CategoryViewComponent implements OnInit {
   jokes: any[];
   goLoc: string;
   nextPage: Number;
+  categories: any[];
 
   constructor(private router: Router, private dataServiceService: DataServiceService, private route: ActivatedRoute, location: Location) {
     this.location = location;
@@ -26,6 +27,10 @@ export class CategoryViewComponent implements OnInit {
       this.dataServiceService.getInCat(params.category, params.page).subscribe(jokes => {
         this.jokes = jokes.data;
       });
+    });
+
+    this.dataServiceService.getCategories().subscribe(categories => {
+      this.categories = categories.data;
     });
   }
 
