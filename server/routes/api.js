@@ -11,7 +11,7 @@ const authCheck = jwt({
 
 
 
-router.post('/registration', function(req, res, next) {
+router.post('/registration', function (req, res, next) {
   return res.send('User Registered!');
 });
 
@@ -183,10 +183,20 @@ router.delete('/viccek/:id', authCheck, function (req, res, next) {
 //Vicc categories
 router.get('/categories', function (req, res, next) {
   let categories = {};
-  Viccek.aggregate([
-    {$group: {_id: "$tag"}},
-    {$sort: {_id: 1}}
-  ])
+  Viccek.aggregate([{
+        $group: {
+          _id: "$tag",
+          count: {
+            $sum: 1
+          }
+        }
+      },
+      {
+        $sort: {
+          _id: 1
+        }
+      }
+    ])
     .exec(function (err, data) {
       if (err) {
         let error = new Error('Database error');
