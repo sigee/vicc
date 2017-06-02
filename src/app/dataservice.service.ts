@@ -1,23 +1,16 @@
 import { Injectable } from '@angular/core';
 import { Http } from '@angular/http';
-import { ActivatedRoute } from '@angular/router';
-import { Location } from '@angular/common';
 import 'rxjs/add/operator/map';
 import 'rxjs/add/operator/switchMap';
 
 const url = 'https://viccek.herokuapp.com';
-const local = 'http://localhost:3000';
 
 @Injectable()
 export class DataServiceService {
     category: string;
     page: number;
 
-  constructor(
-    private http: Http,
-    private route: ActivatedRoute,
-    private location: Location
-  ) { }
+  constructor(private http: Http) { }
 
   getJokes() {
     return this.http.get(url + '/api/viccek/0')
